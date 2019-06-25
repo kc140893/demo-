@@ -10,6 +10,6 @@ try replacing content in var/lib/jenkins/conif.xml with
 enter 
 sudo visudo 
 
-then enter this line in the file opened
+then enter this line in the file are opened
 
 jenkins ALL=(ALL) NOPASSWD: ALL
