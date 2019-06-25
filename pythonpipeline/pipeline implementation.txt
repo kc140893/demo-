@@ -1,0 +1,106 @@
+ apt-get update
+    2  java -version
+    3  apt install openjdk-8-jre-headless
+    4  java -v
+    5  java --version
+    6  java -version
+    7  pwd
+    8  mkdir gitrepo
+    9  cd gitrepo/
+   10  pwd
+   11  git -version
+   12  git --version
+   13  git init
+   14  ls -a
+   15  cd ..
+   16  ll
+   17  pwd
+   18  cd /opt/
+   19  ll
+   20  cd
+   21  wget -qO- https://get.docker.com/ | sh
+   22  docker -v
+   23  usermod -aG docker
+   24  exit
+   25  cd
+   26  usermod -aG docker
+   27  (whoami)
+   28  cd /opt/hello_world/
+   29  ll
+   30  cd
+   31  cd gitrepo/
+   32  ls
+   33  git config --global user.name "kcharusheela"
+   34  	
+   35  git config --list
+   36  python -v
+   37  python --version
+   38  python -version
+   39  git clone https://github.com/jekhokie/scriptbox.git
+   40  ls
+   41  cd scriptbox/
+   42  ls
+   43  cd python--flask-hello-world
+   44  ll
+   45  git remote add origin https://github.com/kcharusheela/scriptbox.git
+   46  git remote -v
+   47  git status
+   48  cd
+   49  apt-get update
+   50  wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+   51  sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+   52  apt update
+   53  apt install jenkins
+   54  systemctl status jenkins
+   55  netstat -lntp
+   56  cat /var/lib/jenkins/secrets/initialAdminPassword
+   57  cd gitrepo/
+   58  ls
+   59  cd scriptbox/
+   60  apt install virtualenv
+   61  python --version
+   62  python -version
+   63  python -v
+   64  apt install python3
+   65  python -v
+   66  python --version
+   67  python -v
+   68  cd
+   69  /usr/bin/python -V
+   70  cd /usr/bin/python -V
+   71  cd /usr/bin/
+   72  ll
+   73  python3 --version
+   74  cd
+   75  cd gitrepo/
+   76  source .env/bin/activate
+   77  virtualenv .env
+   78  source .env/bin/activate
+   79  virtualenv .env
+   80  cd gitrepo/
+   81  ls
+   82  cd scriptbox/
+   83  virtualenv --no-site-packages --distribute .env
+   84  --python=$(which python
+   85  --python=$(which python)
+   86  mkvirtualenv myenv --python=$(which python)
+   87  cd
+   88  cd /usr/bin
+   89  ll
+   90  virtualenv --no-site-packages --distribute .env
+   91  virtualenv .env
+   92  cd
+   93  cd gitrepo/
+   94  cd scriptbox/
+   95  pip install virtualenv
+   96  apt install python-pip
+   97  pip install virtualenv
+   98  virtualenv .env
+   99  source .env/bin/activate
+  100  ls
+  101  cd  python--flask-hello-world
+  102  ll
+  103  cat requirements.txt
+  104  pip install -r requirements.txt
+  105  python -m pytest tests/test_app.py
+  106  python run.py

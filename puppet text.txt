@@ -1,0 +1,103 @@
+172.31.29.190
+ip-172-31-29-190.us-east-2.compute.internal
+172.31.38.172
+ip-172-31-38-172.us-east-2.compute.internal
+172.31.39.128
+ip-172-31-39-128.us-east-2.compute.internal
+
+wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+
+google cloud
+
+10.142.0.2
+puppet-master.c.big-command-198711.internal
+10.142.0.8
+puppetagent-1.c.big-command-198711.internal
+10.142.0.9
+puppetagent-2.c.big-command-198711.internal
+
+manifests
+
+if $operatingsystem == 'Ubuntu' {
+    exec {'update':
+      command => '/usr/bin/apt-get update'
+    }
+    package {'apache2':
+      ensure => present,
+      require => Exec['update'],
+    }
+    service {'apache2':
+      ensure => running,
+      require => Package['apache2'],
+    }
+}
+elsif $operatingsystem == 'CentOS' {
+    exec {'up':
+      command => '/bin/yum -y update'
+    }
+    package {'httpd':
+      ensure => present,
+      require => Exec['up'],
+    }
+    service {'httpd':
+      ensure => running,
+      require => Package['httpd'],
+    }
+}
+
+manifest 2 - classes
+
+class base
+{
+  file { 'devops.txt':
+    path => '/tmp/devops.txt',
+    content => 'hello from base',
+    owner => root,
+    group => root,
+  }
+}
+class derived inherits base
+{
+  group { 'sales':
+     ensure => present,
+  }
+  File ['devops.txt']
+  {
+   group => sales,
+   content => 'hello from dervied',
+   mode => 777,
+  }
+}
+ include derived
+
+
+variBLES MANIFEST :
+
+$content ='this is data from variable'
+ file {'/tmp/testing':
+    content => $content
+ }
+
+
+	template
+
+
+file { "/tmp/template" :
+ ensure => "present",
+ content => template('test.erb')
+}
+
+COPYING A FILE 
+
+
+ SITE.PP
+import 'copymodule'
+include 'myfile'
+
+ INIT.PP
+class myfile{
+  file {'filecopy':
+    path => "/var/www/html/index.html",
+    source => 'puppet:///modules/copymodule/index.html',
+  }
+}

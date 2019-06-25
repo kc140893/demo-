@@ -1,0 +1,15 @@
+-----if u are not able to login into jenkins even if its correct
+
+try replacing content in var/lib/jenkins/conif.xml with 
+
+<authorizationStrategy class="hudson.security.AuthorizationStrategy$Unsecured"/>
+  <securityRealm class="hudson.security.SecurityRealm$None"/>
+
+
+-----if you want to provide sudo access for jenkins 
+enter 
+sudo visudo 
+
+then enter this line in the file opened
+
+jenkins ALL=(ALL) NOPASSWD: ALL

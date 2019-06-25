@@ -1,0 +1,135 @@
+Started by user unknown or anonymous
+Obtained hello_world/jenkins/Jenkinsfile from git https://github.com/mcharusheela/hello_world.git
+Running in Durability level: MAX_SURVIVABILITY
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/python-pipeline
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout Code)
+[Pipeline] git
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/mcharusheela/hello_world.git # timeout=10
+Fetching upstream changes from https://github.com/mcharusheela/hello_world.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/mcharusheela/hello_world.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 979e15d8993c61fd2f1cbae55c0f6c291fd9c3fe (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 979e15d8993c61fd2f1cbae55c0f6c291fd9c3fe # timeout=10
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D master # timeout=10
+ > git checkout -b master 979e15d8993c61fd2f1cbae55c0f6c291fd9c3fe # timeout=10
+Commit message: "Update for Histogram Equalization"
+ > git rev-list --no-walk 979e15d8993c61fd2f1cbae55c0f6c291fd9c3fe # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Unit Test)
+[Pipeline] dir
+Running in /var/lib/jenkins/workspace/python-pipeline/hello_world
+[Pipeline] {
+[Pipeline] sh
++ virtualenv .env
+New python executable in .env/bin/python
+Installing setuptools, pip...done.
+[Pipeline] sh
++ . .env/bin/activate
++ deactivate nondestructive
++ unset pydoc
++ [ -n  ]
++ [ -n  ]
++ [ -n  -o -n  ]
++ [ -n  ]
++ unset VIRTUAL_ENV
++ [ ! nondestructive = nondestructive ]
++ VIRTUAL_ENV=/var/lib/jenkins/workspace/python-pipeline/hello_world/.env
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
++ PATH=/var/lib/jenkins/workspace/python-pipeline/hello_world/.env/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
++ export PATH
++ [ -n  ]
++ [ -z  ]
++ _OLD_VIRTUAL_PS1=$ 
++ [ x != x ]
++ basename /var/lib/jenkins/workspace/python-pipeline/hello_world/.env
++ [ .env = __ ]
++ basename /var/lib/jenkins/workspace/python-pipeline/hello_world/.env
++ PS1=(.env)$ 
++ export PS1
++ alias pydoc=python -m pydoc
++ [ -n  -o -n  ]
+[Pipeline] sh
++ pip install -r requirements.txt
+Downloading/unpacking Flask (from -r requirements.txt (line 1))
+Downloading/unpacking pytest (from -r requirements.txt (line 2))
+Downloading/unpacking Jinja2>=2.10 (from Flask->-r requirements.txt (line 1))
+Downloading/unpacking click>=5.1 (from Flask->-r requirements.txt (line 1))
+Downloading/unpacking Werkzeug>=0.14 (from Flask->-r requirements.txt (line 1))
+Downloading/unpacking itsdangerous>=0.24 (from Flask->-r requirements.txt (line 1))
+  Downloading itsdangerous-1.1.0-py2.py3-none-any.whl
+Downloading/unpacking pluggy>=0.7 (from pytest->-r requirements.txt (line 2))
+  Downloading pluggy-0.8.1-py2.py3-none-any.whl
+Downloading/unpacking atomicwrites>=1.0 (from pytest->-r requirements.txt (line 2))
+  Downloading atomicwrites-1.2.1-py2.py3-none-any.whl
+Downloading/unpacking funcsigs (from pytest->-r requirements.txt (line 2))
+  Downloading funcsigs-1.0.2-py2.py3-none-any.whl
+Downloading/unpacking py>=1.5.0 (from pytest->-r requirements.txt (line 2))
+Requirement already satisfied (use --upgrade to upgrade): setuptools in /usr/lib/python2.7/dist-packages (from pytest->-r requirements.txt (line 2))
+Downloading/unpacking more-itertools>=4.0.0 (from pytest->-r requirements.txt (line 2))
+Downloading/unpacking six>=1.10.0 (from pytest->-r requirements.txt (line 2))
+  Downloading six-1.12.0-py2.py3-none-any.whl
+Downloading/unpacking pathlib2>=2.2.0 (from pytest->-r requirements.txt (line 2))
+  Downloading pathlib2-2.3.3-py2.py3-none-any.whl
+Downloading/unpacking attrs>=17.4.0 (from pytest->-r requirements.txt (line 2))
+  Downloading attrs-18.2.0-py2.py3-none-any.whl
+Downloading/unpacking MarkupSafe>=0.23 (from Jinja2>=2.10->Flask->-r requirements.txt (line 1))
+  Downloading MarkupSafe-1.1.0.tar.gz
+  Running setup.py (path:/tmp/pip_build_jenkins/MarkupSafe/setup.py) egg_info for package MarkupSafe
+    /usr/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'project_urls'
+      warnings.warn(msg)
+    /usr/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    
+    no previously-included directories found matching 'docs/_build'
+    warning: no previously-included files matching '*.py[co]' found anywhere in distribution
+Downloading/unpacking scandir (from pathlib2>=2.2.0->pytest->-r requirements.txt (line 2))
+  Downloading scandir-1.9.0.tar.gz
+  Running setup.py (path:/tmp/pip_build_jenkins/scandir/setup.py) egg_info for package scandir
+    /usr/lib/python2.7/distutils/extension.py:133: UserWarning: Unknown Extension options: 'optional'
+      warnings.warn(msg)
+    
+Installing collected packages: Flask, pytest, Jinja2, click, Werkzeug, itsdangerous, pluggy, atomicwrites, funcsigs, py, more-itertools, six, pathlib2, attrs, MarkupSafe, scandir
+Cleaning up...
+Exception:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/pip/basecommand.py", line 122, in main
+    status = self.run(options, args)
+  File "/usr/lib/python2.7/dist-packages/pip/commands/install.py", line 283, in run
+    requirement_set.install(install_options, global_options, root=options.root_path)
+  File "/usr/lib/python2.7/dist-packages/pip/req.py", line 1436, in install
+    requirement.install(install_options, global_options, *args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/pip/req.py", line 672, in install
+    self.move_wheel_files(self.source_dir, root=root)
+  File "/usr/lib/python2.7/dist-packages/pip/req.py", line 902, in move_wheel_files
+    pycompile=self.pycompile,
+  File "/usr/lib/python2.7/dist-packages/pip/wheel.py", line 206, in move_wheel_files
+    clobber(source, lib_dir, True)
+  File "/usr/lib/python2.7/dist-packages/pip/wheel.py", line 193, in clobber
+    os.makedirs(destsubdir)
+  File "/usr/lib/python2.7/os.py", line 157, in makedirs
+    mkdir(name, mode)
+OSError: [Errno 13] Permission denied: '/usr/local/lib/python2.7/dist-packages/Flask-1.0.2.dist-info'
+
+Storing debug log for failure in /var/lib/jenkins/.pip/pip.log
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: script returned exit code 2
+Finished: FAILURE

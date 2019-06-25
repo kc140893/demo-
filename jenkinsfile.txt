@@ -1,0 +1,17 @@
+   stage('Checkout Code') {
+      git 'https://github.com/mcharusheela/hello_world.git'
+   }
+   stage('Unit Test') {
+      // run the unit tests
+      dir("hello_world") {
+         def sh
+         def sudo
+         sudo sh "virtualenv .env"
+         sudo sh ". .env/bin/activate"
+         sudo sh "pip install requests --upgrade"
+       //  sudo sh "pip install --user -r requirements.txt"
+         sudo sh "pip install -r requirements.txt"
+         sh "python -m pytest tests/test_app.py"
+      }
+   }
+}
